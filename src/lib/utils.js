@@ -4,3 +4,18 @@ import { twMerge } from "tailwind-merge"
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
 }
+
+export const getMonthlyTotals = (transactions) => {
+  const map = {};
+
+  transactions.forEach((tx) => {
+    const date = new Date(tx.date);
+    const month = date.toLocaleString('default', { month: 'short', year: 'numeric' }); // e.g., "Jul 2025"
+
+    if (!map[month]) map[month] = 0;
+    map[month] += tx.amount;
+  });
+
+  // Return as array for Recharts
+  return Object.entries(map).map(([month, total]) => ({ month, total }));
+};
