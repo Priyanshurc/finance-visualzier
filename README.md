@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💸 Personal Finance Visualizer
 
-## Getting Started
+A simple, modern web application to track personal finances — add transactions, visualize expenses, and set monthly budgets — **without login or signup**.
 
-First, run the development server:
+Built with **Next.js**, **React**, **TailwindCSS (via shadcn/ui)**, **MongoDB**, and **Recharts**.
+
+---
+
+## 🚀 Live Demo
+
+👉 [Live on Vercel](https://your-vercel-link.vercel.app) *(Replace with your deployment URL)*
+
+---
+
+## 📦 Tech Stack
+
+- **Next.js (App Router, JS)**
+- **React**
+- **TailwindCSS** + `shadcn/ui`
+- **MongoDB Atlas** (via Mongoose)
+- **Recharts** for visualizations
+
+---
+
+## 🧱 Features by Stage
+
+### ✅ Stage 1: Basic Transaction Tracker
+
+- Add / Edit / Delete expenses
+- List all transactions
+- Bar chart showing monthly spending
+
+### ✅ Stage 2: Categories
+
+- Predefined categories (Food, Rent, Travel, etc.)
+- Pie chart for category-wise spending
+- Dashboard cards: Total spend, recent transactions, category % breakdown
+
+### ✅ Stage 3: Budgeting
+
+- Set monthly budget per category
+- Budget vs Actual comparison
+- Basic spending insights (e.g., Overspent, Safe, Under Budget)
+
+---
+
+## 🖼 Screenshots (Coming Soon)
+
+---
+
+## 📁 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+finance-visualizer/
+├── src/
+│   ├── app/
+│   │   ├── dashboard/            # Dashboard charts & cards
+│   │   ├── transactions/         # Transaction list & form
+│   │   └── api/                  # API routes for MongoDB
+│   ├── components/
+│   │   ├── charts/               # Bar, Pie, Budget charts
+│   │   ├── forms/                # Transaction & Budget Forms
+│   │   ├── layout/               # Navbar, Wrapper
+│   │   └── cards/                # Summary Cards
+│   ├── lib/                      # DB connector, utils
+│   ├── models/                   # Mongoose models
+│   ├── services/                 # Reusable service logic
+├── .env.local                    # MongoDB URI
+├── styles/                       # Tailwind base styles
+├── public/
+├── README.md

@@ -19,3 +19,22 @@ export const getMonthlyTotals = (transactions) => {
   // Return as array for Recharts
   return Object.entries(map).map(([month, total]) => ({ month, total }));
 };
+
+// src/lib/utils.js
+export function getCategoryTotals(transactions) {
+  const totals = {};
+
+  transactions.forEach(({ category, amount }) => {
+    if (!category || !amount) return;
+    totals[category] = (totals[category] || 0) + amount;
+  });
+
+  return Object.entries(totals).map(([category, total]) => ({
+    category,
+    total,
+  }));
+}
+
+export function getTotalExpenses(transactions) {
+  return transactions.reduce((sum, tx) => sum + tx.amount, 0);
+}
