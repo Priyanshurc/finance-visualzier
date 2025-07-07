@@ -7,7 +7,7 @@ export async function GET() {
     const transactions = await Transaction.find().sort({ date: -1 });
     return Response.json(transactions);
   } catch (err) {
-    console.error("❌ Error in GET:", err);
+    console.error("Error in GET:", err);
     return new Response('Error fetching transactions', { status: 500 });
   }
 }
@@ -19,7 +19,7 @@ export async function POST(req) {
     const newTx = await Transaction.create(body);
     return Response.json(newTx, { status: 201 });
   } catch (err) {
-    console.error("❌ Error in POST:", err);
+    console.error("Error in POST:", err);
     return new Response('Error creating transaction', { status: 500 });
   }
 }
